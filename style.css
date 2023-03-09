@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-body: #e5e5e5;
+
+  --bg-unpressbutton: hsla(240, 9%, 89%, 1);
+  --bg-pressbutton: hsla(194, 97%, 31%, 1);
+  --tx-body: hsla(240, 6%, 21%, 1);
+
+  --ff-body: 'Roboto', sans-serif;
+
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--bg-body);
+  font-family: var(--ff-body);
+  color: var(--tx-body);
+}
+
+.controls,
+.play,
+.pause,
+.stop,
+.increment,
+.decrement, button {
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+#content {
+  display: flex;
+  width: 82.1rem;
+  height: 33.6rem;
+  margin: 20.0rem auto;
+}
+
+.hide {
+  display: none;
+}
+
+.timer {
+  display: flex;
+  align-self: center;
+  font-size: 12.6rem;
+  font-weight: 500;
+  line-height: 14.8rem;
+  text-transform: uppercase;
+}
+
+.controls {
+  display: flex;
+  padding: 0px;
+  margin-top: 25rem;
+  gap: clamp(2.7rem, 3.1vw, 4.8rem);
+
+  position: absolute;
+  width: 31.2rem;
+  height: 4.8rem;
+}
+
+.sounds {
+  display: grid;
+  grid-template-areas: "forest rain" "coffee-shop fireplace";
+  gap: clamp(2.1rem, 2.5vw, 3.2rem);
+  margin-left: 22rem;
+  margin-top: 4rem;
+}
+
+.sounds button svg {
+  width: clamp(9.2rem, 10.8vw, 13.7rem);
+}
+
+.sounds button svg path:nth-child(1) {
+  fill: var(--bg-unpressbutton);
+}
+
+.sounds button svg path:nth-child(2) {
+  fill: var(--tx-body)
+}
+
+.sounds button.active svg path:nth-child(1) {
+  fill: var(--bg-pressbutton)
+}
+
+.sounds button.active svg path:nth-child(2) {
+  fill: var(--bg-body);
+}
+
+.forest {
+  grid-area: forest;
+}
+
+.rain {
+  grid-area: rain;
+}
+
+.coffee-shop {
+  grid-area: coffee-shop;
+}
+
+.fireplace {
+  grid-area: fireplace;
+}
